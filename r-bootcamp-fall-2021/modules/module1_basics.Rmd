@@ -26,9 +26,11 @@ library(gapminder)
 # Basic functions
 sqrt(4^4) 
 log(10)
-log(100, base = 10)
 23 %/% 2 
 23 %% 2
+
+# Some functions can have an optional argument
+log(100, base = 10)
 
 # Scientific notation
 5000000000 * 1000
@@ -57,7 +59,11 @@ Side note to presenter: turn off R Notebook inline view via RStudio -> Preferenc
 *Question 2*: What happens if you do this?
 
 ```{r eval=FALSE}
+# There may be more than one way to carry out calculations
+# Spaces can be included for better human readability, but are not necessary
 cos(2*pi)
+cos(2 * pi)
+cos(2 * 3.14159)
 ```
 
 
@@ -67,28 +73,35 @@ cos(2*pi)
 A key action in R is to store values in the form of R objects, and to examine the value of R objects.
 
 ```{r}
+# We are storing the value 3 into the variable "val"
 val <- 3
 val
 print(val)
 
-Val <- 7 # case-sensitive!
+# R is case-sensitive
+Val <- 7 
 print(c(val, Val))
 ```
 
 We can work with (and store) sequences and repetitions
 ```{r}
+# Range
 mySeq <- 1:6
 mySeq
 
+# Range in increments
 years <- seq(1952, 2007, by = 5)
 years
 length(years)
 
+# Repeat function
 country <- rep("Afghanistan", 12)
 country 
 
-## This is a comment: here is an example of non-numeric data
-countries <- c("Afghanistan", "India", "Pakistan")
+# This is a comment: here is an example of non-numeric data
+# Include comments in your code so your future self or other people know what is happening in the code
+# You can also have an in-line comment
+countries <- c("Afghanistan", "India", "Pakistan") # In-line comment
 countries
 ```
 
@@ -121,25 +134,26 @@ The most basic form of an R object is a vector. In fact, individual (scalar) val
 We can concatenate values into a vector with `c()`.
 
 ```{r}
-## numeric vector
+# Numeric vector
 nums <- c(1.1, 3, -5.7)
 devs <- rnorm(5)
 devs
 
-## integer vector
-ints <- c(1L, 5L, -3L) # force storage as integer not decimal number
-## 'L' is for 'long integer' (historical)
+# Integer vector
+# Force storage as integer not decimal number
+ints <- c(1L, 5L, -3L) 
+# 'L' is for 'long integer' (historical)
 
 nObs <- 1000
 mySample <- sample(1:1000, 100, replace = TRUE)
 
-## character vector
+# Character vector
 chars <- c('hi', 'hallo', "mother's", 'father\'s', 
    "She said, 'hi'", "He said, \"hi\"" )
 chars
 cat(chars, sep = "\n")
 
-## logical vector
+# Logical vector
 bools <- c(TRUE, FALSE, TRUE)
 bools
 ```
@@ -164,10 +178,10 @@ vals[-c(1, 3, 6)]
 vals[c(rep(TRUE, 3), rep(FALSE, 2), TRUE)]
 
 
-## If you haven't installed the gapminder package, do this first:
+# If you haven't installed the gapminder package, do this first:
 install.packages('gapminder')
 
-## create a simple vector from the Gapminder dataset
+# create a simple vector from the Gapminder dataset
 library(gapminder)
 gdp <- gapminder$gdpPercap
 gdp[1:10]
@@ -180,7 +194,7 @@ gdp[4] <- 822.9711
 vals <- rnorm(100)
 vals[1:2] <- 0
 
-## How does R process these next subset operations?
+# How does R process these next subset operations?
 vals[vals < 0] <- 0
 vals[1:8]
 
@@ -223,13 +237,13 @@ vec1 > vec2
 
 vec1 == vec2
 vec1 != vec2
-## careful: 
+# careful: 
 vec1 = vec2
 identical(vec1, vec2)
 
-## using 'or'
+# using 'or'
 gdpSubset >= 1e12 | gdpSubset <= 1e10
-## using 'and'
+# using 'and'
 gapminder$lifeExp[1:10] < 75 & gapminder$continent[1:10] == "Americas"
 ```
 
