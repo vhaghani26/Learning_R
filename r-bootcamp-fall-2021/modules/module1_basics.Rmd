@@ -11,17 +11,26 @@ library(gapminder)
 # R as a calculator
 
 ```{r computing,echo=TRUE,results='markup'}
-2 + 2 # add numbers
-2 * pi # multiply by a constant
-7 + runif(1) # add a random number
-3^4 # powers
-sqrt(4^4) # functions
+# Add numbers
+2 + 2 
+
+# Multiply by a constant
+2 * pi
+
+# Add a random number
+7 + runif(1) 
+
+# Use an exponential/power
+3^4 
+
+# Basic functions
+sqrt(4^4) 
 log(10)
 log(100, base = 10)
 23 %/% 2 
 23 %% 2
 
-# scientific notation
+# Scientific notation
 5000000000 * 1000
 5e9 * 1e3
 ```
@@ -48,7 +57,7 @@ Side note to presenter: turn off R Notebook inline view via RStudio -> Preferenc
 *Question 2*: What happens if you do this?
 
 ```{r eval=FALSE}
-cos(2*pi
+cos(2*pi)
 ```
 
 
