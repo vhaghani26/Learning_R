@@ -5,6 +5,10 @@
 ```{r chunksetup, include=FALSE, cache=TRUE} 
 # include any code here you don't want to show up in the document,
 # e.g. package and dataset loading
+# If you haven't installed the gapminder package, do this first:
+install.packages('gapminder')
+
+# Load the package
 library(gapminder)
 ```
 
@@ -148,6 +152,7 @@ nObs <- 1000
 mySample <- sample(1:1000, 100, replace = TRUE)
 
 # Character vector
+# You can mix and match single and double quotes for your uses
 chars <- c('hi', 'hallo', "mother's", 'father\'s', 
    "She said, 'hi'", "He said, \"hi\"" )
 chars
@@ -161,6 +166,7 @@ bools
 This is not valid syntax in R. Let's try it and see what happens.
 
 ```{r, eval=FALSE}
+# Examples of invalid syntax
 nums <- (1.1, 3, -5.7)
 nums <- [1.1, 3, -5.7]
 ```
@@ -168,6 +174,7 @@ nums <- [1.1, 3, -5.7]
 # Working with indices and subsets
 
 ```{r}
+# Indexing starts at 1 in R
 vals <- seq(2, 12, by = 2)
 vals
 
@@ -177,10 +184,6 @@ vals[c(1, 3, 6)]
 vals[-c(1, 3, 6)]
 vals[c(rep(TRUE, 3), rep(FALSE, 2), TRUE)]
 
-
-# If you haven't installed the gapminder package, do this first:
-install.packages('gapminder')
-
 # create a simple vector from the Gapminder dataset
 library(gapminder)
 gdp <- gapminder$gdpPercap
@@ -189,6 +192,7 @@ gdp[1:10]
 ```
 We can substitute values into vectors
 ```{r}
+# Substitute the value at the fourth index with this value
 gdp[4] <- 822.9711
 
 vals <- rnorm(100)
