@@ -228,6 +228,12 @@ vals <- rnorm(4)
 At the core of R is the idea of doing calculations on entire vectors.
 
 ```{r}
+# Poll answers 
+vals[3]
+vals[c(2,3)]
+# This works without error, but you typically want to match the dimensions of your object
+vals[c(FALSE, TRUE, TRUE, FALSE)]
+
 gdpTotal <- gapminder$gdpPercap * gapminder$pop
 
 tmp <- gdpTotal[gapminder$year == "2007"]
