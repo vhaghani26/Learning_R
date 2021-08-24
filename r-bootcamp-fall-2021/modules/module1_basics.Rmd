@@ -247,13 +247,13 @@ vec1 > vec2
 
 vec1 == vec2
 vec1 != vec2
-# careful: 
+# Careful: 
 vec1 = vec2
 identical(vec1, vec2)
 
-# using 'or'
+# Using 'or'
 gdpSubset >= 1e12 | gdpSubset <= 1e10
-# using 'and'
+# Using 'and'
 gapminder$lifeExp[1:10] < 75 & gapminder$continent[1:10] == "Americas"
 ```
 
@@ -261,7 +261,8 @@ gapminder$lifeExp[1:10] < 75 & gapminder$continent[1:10] == "Americas"
 
 * We can see the code of a function:
 ```{r}
-median  # We'll investigate what 'UseMethod' does in Module 10
+# We'll investigate what 'UseMethod' does in Module 10
+median  
 lm
 median(gapminder$lifeExp)
 ```
