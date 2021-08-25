@@ -318,14 +318,16 @@ class(gapminder$country)
 Collections of disparate or complicated objects
 
 ```{r}
+# Result is not (usually) a list (unless you have nested lists)
 myList <- list(stuff = 3, mat = matrix(1:4, nrow = 2), 
    moreStuff = c("china", "japan"), list(5, "bear"))
 myList
-myList[[1]] # result is not (usually) a list (unless you have nested lists)
+myList[[1]] 
 identical(myList[[1]], myList$stuff)
 myList$moreStuff[2]
 myList[[4]][[2]]
-myList[1:3] # subset of a list is a list
+# Subset of a list is a list
+myList[1:3] 
 myList$newOne <- 'more weird stuff'
 names(myList)
 ```
